@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+  <meta charset="utf-8" />
+
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+
+  <meta
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    name="viewport"
+  />
+
+  <title>معرض الأعمال</title>
+
+  <meta property="og:title" content="معرض الأعمال" />
+
+  <meta property="og:locale" content="ar_SA" />
+
+  <link
+    rel="canonical"
+    href="//"
+  />
+
+  <meta
+    property="og:url"
+    content="//"
+  />
+
+  <meta
+    name="description"
+    content="معرض أعمال احترافي يعرض أفضل المشاريع والخدمات المقدمة."
+  />
+
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+
+  <meta name="theme-color" content="#5540af" />
+
+  <meta property="og:site_name" content="معرض الأعمال" />
+
+  <meta property="og:image" content="./assets/img/social.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link
+    crossorigin="crossorigin"
+    href="https://fonts.gstatic.com"
+    rel="preconnect"
+  />
+
+  <link
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Tajawal:wght@400;500;700&display=swap"
+    rel="preload"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Tajawal:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+
+  <link
+    crossorigin="anonymous"
+    href="./assets/styles/main.min.css"
+    media="screen"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* RTL overrides and Arabic font */
+    html {
+      direction: rtl;
+    }
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+    }
+    /* Flip padding/margin utilities for RTL */
+    .pl-2, .pl-4, .pl-6, .pl-8 {
+      padding-left: 0 !important;
+    }
+    .pl-2 { padding-right: 0.5rem !important; }
+    .pl-4 { padding-right: 1rem !important; }
+    .pl-6 { padding-right: 1.5rem !important; }
+    .pl-8 { padding-right: 2rem !important; }
+
+    .pr-2, .pr-4, .pr-6, .pr-8 {
+      padding-right: 0 !important;
+    }
+    .pr-2 { padding-left: 0.5rem !important; }
+    .pr-4 { padding-left: 1rem !important; }
+    .pr-6 { padding-left: 1.5rem !important; }
+    .pr-8 { padding-left: 2rem !important; }
+
+    .ml-2, .ml-3, .ml-10 {
+      margin-left: 0 !important;
+    }
+    .ml-2 { margin-right: 0.5rem !important; }
+    .ml-3 { margin-right: 0.75rem !important; }
+    .ml-10 { margin-right: 2.5rem !important; }
+
+    .mr-3, .mr-4 {
+      margin-right: 0 !important;
+    }
+    .mr-3 { margin-left: 0.75rem !important; }
+    .mr-4 { margin-left: 1rem !important; }
+
+    .text-left {
+      text-align: right !important;
+    }
+    .text-right {
+      text-align: left !important;
+    }
+
+    /* Fix nav and layout for RTL */
+    .bx-chevron-right:before {
+      content: "\ea50" !important; /* chevron-left icon for RTL */
+    }
+    .bxs-right-arrow:before {
+      content: "\ee31" !important; /* left-arrow for RTL */
+    }
+
+    /* RTL specific adjustments */
+    @media (min-width: 640px) {
+      .sm\:text-left {
+        text-align: right !important;
+      }
+    }
+    @media (min-width: 1024px) {
+      .lg\:text-left {
+        text-align: right !important;
+      }
+      .lg\:pl-8 {
+        padding-left: 0 !important;
+        padding-right: 2rem !important;
+      }
+      .lg\:pl-12 {
+        padding-left: 0 !important;
+        padding-right: 3rem !important;
+      }
+      .lg\:justify-start {
+        justify-content: flex-end !important;
+      }
+      .lg\:w-1\/3:first-child {
+        border-right: 2px solid;
+      }
+    }
+    @media (min-width: 768px) {
+      .md\:text-left {
+        text-align: right !important;
+      }
+      .md\:pl-8 {
+        padding-left: 0 !important;
+        padding-right: 2rem !important;
+      }
+      .md\:pl-5 {
+        padding-left: 0 !important;
+        padding-right: 1.25rem !important;
+      }
+      .md\:ml-3 {
+        margin-left: 0 !important;
+        margin-right: 0.75rem !important;
+      }
+      .md\:pl-1 {
+        padding-left: 0 !important;
+        padding-right: 0.25rem !important;
+      }
+    }
+
+    /* Fix the timeline line position for RTL */
+    .left-2\/5 {
+      left: auto !important;
+      right: 40% !important;
+    }
+
+    /* Mobile menu RTL */
+    .absolute.right-0 {
+      right: auto !important;
+      left: 0 !important;
+    }
+
+    /* Border fix for RTL on contact info */
+    .border-l-2 {
+      border-left: 0 !important;
+      border-right: 2px solid !important;
+    }
+    .lg\:border-l-0 {
+      border-right: 0 !important;
+    }
+
+    /* Fix gradient direction for RTL */
+    .bg-gradient-to-r {
+      background-image: linear-gradient(to left, var(--tw-gradient-stops)) !important;
+    }
+
+    /* Font overrides */
+    .font-header {
+      font-family: 'Cairo', sans-serif !important;
+    }
+    .font-body {
+      font-family: 'Tajawal', sans-serif !important;
+    }
+
+    /* Fix mobile menu position */
+    div[class*="absolute right-0 min-h-screen"] {
+      right: auto !important;
+      left: 0 !important;
+    }
+  </style>
+  
+  <script
+    defer
+    src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
+  ></script>
+
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  
+</head>
+
+
+  <body
+    :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
+    class="relative"
+    x-data="{ mobileMenu: false }"
+  >
+    
+    <div id="main" class="relative">
+      <div
+  x-data="{
+    triggerNavItem(id) {
+        $scroll(id)
+    },
+    triggerMobileNavItem(id) {
+        mobileMenu = false;
+        this.triggerNavItem(id)
+    }
+}"
+>
+  <div class="w-full z-50 top-0 py-3 sm:py-5  absolute
+  ">
+  <div class="container flex items-center justify-between">
+    <div>
+      <a href="/">
+        <img src="./assets/img/logo.svg" class="w-24 lg:w-48" alt="شعار الموقع" />
+      </a>
+    </div>
+    <div class="hidden lg:block">
+      <ul class="flex items-center">
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#about')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >من أنا</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#services')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >خدماتي</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#portfolio')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >أعمالي</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#work')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >الخبرات</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#statistics')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >الإحصائيات</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#contact')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >تواصل معي</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"
+          ></span>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="block lg:hidden">
+      <button @click="mobileMenu = true">
+        <i class="bx bx-menu text-4xl text-white"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div
+  class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+  :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
+>
+  <div
+    class="absolute left-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3"
+  >
+    <button
+      class="absolute top-0 left-0 mt-4 ml-4"
+      @click="mobileMenu = false"
+    >
+      <img src="./assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
+    </button>
+
+    <ul class="mt-8 flex flex-col">
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#about')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >من أنا</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#services')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >خدماتي</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#portfolio')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >أعمالي</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#work')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >الخبرات</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#statistics')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >الإحصائيات</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#contact')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >تواصل معي</span
+        >
+        
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+      <div><div
+  class="relative bg-cover bg-center bg-no-repeat py-8"
+  style="background-image: url(./assets/img/bg-hero.jpg)"
+>
+  <div
+    class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat"
+  ></div>
+
+  <div
+    class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48"
+  >
+    <div class="flex flex-col items-center justify-center lg:flex-row">
+      <div class="rounded-full border-8 border-primary shadow-xl">
+        <img
+          src="./assets/img/blog-author.jpg"
+          class="h-48 rounded-full sm:h-56"
+          alt="صورة شخصية"
+        />
+      </div>
+      <div class="pt-8 sm:pt-10 lg:pr-8 lg:pt-0">
+        <h1
+          class="text-center font-header text-4xl text-white sm:text-right sm:text-5xl md:text-6xl"
+        >
+          مرحباً، أنا كريستي سميث!
+        </h1>
+        <div
+          class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start"
+        >
+          <div
+            class="flex items-center justify-center pr-0 sm:justify-start md:pr-1"
+          >
+            <p class="font-body text-lg uppercase text-white">تواصل معي</p>
+            <div class="hidden sm:block">
+              <i class="bx bx-chevron-left text-3xl text-yellow"></i>
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-center pt-5 pr-2 sm:justify-start sm:pt-0"
+          >
+            <a href="/">
+              <i
+                class="bx bxl-facebook-square text-2xl text-white hover:text-yellow"
+              ></i>
+            </a>
+            <a href="/" class="pr-4">
+              <i
+                class="bx bxl-twitter text-2xl text-white hover:text-yellow"
+              ></i>
+            </a>
+            <a href="/" class="pr-4">
+              <i
+                class="bx bxl-dribbble text-2xl text-white hover:text-yellow"
+              ></i>
+            </a>
+            <a href="/" class="pr-4">
+              <i
+                class="bx bxl-linkedin text-2xl text-white hover:text-yellow"
+              ></i>
+            </a>
+            <a href="/" class="pr-4">
+              <i
+                class="bx bxl-instagram text-2xl text-white hover:text-yellow"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-grey-50" id="about">
+  <div class="container flex flex-col items-center py-16 md:py-20 lg:flex-row">
+    <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-right">
+      <h2
+        class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+      >
+        من أنا؟
+      </h2>
+      <h4
+        class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+      >
+        أنا كريستي سميث، مصممة ويب ومصورة فوتوغرافية
+      </h4>
+      <p class="pt-6 font-body leading-relaxed text-grey-20">
+        مصممة ومطورة ويب محترفة مع خبرة واسعة في تصميم واجهات المستخدم
+        وتطوير المواقع الإلكترونية. أسعى دائماً لتقديم أفضل الحلول الرقمية
+        التي تلبي احتياجات العملاء وتتجاوز توقعاتهم. أؤمن بأن التصميم الجيد
+        هو مزيج من الجمال والوظيفية، وأعمل على تحقيق هذا التوازن في كل
+        مشروع أعمل عليه.
+      </p>
+      <div
+        class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start"
+      >
+        <div class="flex items-center justify-center sm:justify-start">
+          <p class="font-body text-lg font-semibold uppercase text-grey-20">
+            تواصل معي
+          </p>
+          <div class="hidden sm:block">
+            <i class="bx bx-chevron-left text-2xl text-primary"></i>
+          </div>
+        </div>
+        <div
+          class="flex items-center justify-center pt-5 pr-2 sm:justify-start sm:pt-0"
+        >
+          <a href="/">
+            <i
+              class="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"
+            ></i>
+          </a>
+          <a href="/" class="pr-4">
+            <i
+              class="bx bxl-twitter text-2xl text-primary hover:text-yellow"
+            ></i>
+          </a>
+          <a href="/" class="pr-4">
+            <i
+              class="bx bxl-dribbble text-2xl text-primary hover:text-yellow"
+            ></i>
+          </a>
+          <a href="/" class="pr-4">
+            <i
+              class="bx bxl-linkedin text-2xl text-primary hover:text-yellow"
+            ></i>
+          </a>
+          <a href="/" class="pr-4">
+            <i
+              class="bx bxl-instagram text-2xl text-primary hover:text-yellow"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="w-full pr-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pr-12 lg:pt-0">
+      <div>
+        <div class="flex items-end justify-between">
+          <h4 class="font-body font-semibold uppercase text-black">
+            HTML & CSS
+          </h4>
+          <h3 class="font-body text-3xl font-bold text-primary">85%</h3>
+        </div>
+        <div class="mt-2 h-3 w-full rounded-full bg-lila">
+          <div class="h-3 rounded-full bg-primary" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="pt-6">
+        <div class="flex items-end justify-between">
+          <h4 class="font-body font-semibold uppercase text-black">Python</h4>
+          <h3 class="font-body text-3xl font-bold text-primary">70%</h3>
+        </div>
+        <div class="mt-2 h-3 w-full rounded-full bg-lila">
+          <div class="h-3 rounded-full bg-primary" style="width: 70%"></div>
+        </div>
+      </div>
+      <div class="pt-6">
+        <div class="flex items-end justify-between">
+          <h4 class="font-body font-semibold uppercase text-black">
+            Javascript
+          </h4>
+          <h3 class="font-body text-3xl font-bold text-primary">98%</h3>
+        </div>
+        <div class="mt-2 h-3 w-full rounded-full bg-lila">
+          <div class="h-3 rounded-full bg-primary" style="width: 98%"></div>
+        </div>
+      </div>
+      <div class="pt-6">
+        <div class="flex items-end justify-between">
+          <h4 class="font-body font-semibold uppercase text-black">Figma</h4>
+          <h3 class="font-body text-3xl font-bold text-primary">91%</h3>
+        </div>
+        <div class="mt-2 h-3 w-full rounded-full bg-lila">
+          <div class="h-3 rounded-full bg-primary" style="width: 91%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-16 md:py-20" id="services">
+  <h2
+    class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+  >
+    ما أتقنه
+  </h2>
+  <h3
+    class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+  >
+    هذه هي الخدمات التي أقدمها
+  </h3>
+
+  <div
+    class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3"
+  >
+    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+        <div class="hidden group-hover:block">
+          <img
+            src="./assets/img/icon-development-white.svg"
+            alt="أيقونة التطوير"
+          />
+        </div>
+        <div class="block group-hover:hidden">
+          <img
+            src="./assets/img/icon-development-black.svg"
+            alt="أيقونة التطوير"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+        >
+          تطوير المواقع
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          تطوير مواقع ويب احترافية وسريعة ومتجاوبة مع جميع الأجهزة.
+        </p>
+      </div>
+    </div>
+    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+        <div class="hidden group-hover:block">
+          <img
+            src="./assets/img/icon-content-white.svg"
+            alt="أيقونة المحتوى"
+          />
+        </div>
+        <div class="block group-hover:hidden">
+          <img
+            src="./assets/img/icon-content-black.svg"
+            alt="أيقونة المحتوى"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+        >
+          كتابة المحتوى
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          كتابة محتوى تقني وإبداعي يجذب الجمهور المستهدف.
+        </p>
+      </div>
+    </div>
+    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+        <div class="hidden group-hover:block">
+          <img
+            src="./assets/img/icon-mobile-white.svg"
+            alt="أيقونة تطبيقات الجوال"
+          />
+        </div>
+        <div class="block group-hover:hidden">
+          <img
+            src="./assets/img/icon-mobile-black.svg"
+            alt="أيقونة تطبيقات الجوال"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+        >
+          تطوير تطبيقات الجوال
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          بناء تطبيقات جوال متميزة لنظامي أندرويد و iOS.
+        </p>
+      </div>
+    </div>
+    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+        <div class="hidden group-hover:block">
+          <img
+            src="./assets/img/icon-email-white.svg"
+            alt="أيقونة البريد"
+          />
+        </div>
+        <div class="block group-hover:hidden">
+          <img
+            src="./assets/img/icon-email-black.svg"
+            alt="أيقونة البريد"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+        >
+          تطوير البريد الإلكتروني
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          تصميم وتطوير حملات بريد إلكتروني جذابة وفعالة.
+        </p>
+      </div>
+    </div>
+    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+        <div class="hidden group-hover:block">
+          <img
+            src="./assets/img/icon-design-white.svg"
+            alt="أيقونة التصميم"
+          />
+        </div>
+        <div class="block group-hover:hidden">
+          <img
+            src="./assets/img/icon-design-black.svg"
+            alt="أيقونة التصميم"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+        >
+          التصميم الجرافيكي
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          تصاميم جرافيكية مبتكرة وجذابة لهوية علامتك التجارية.
+        </p>
+      </div>
+    </div>
+    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+        <div class="hidden group-hover:block">
+          <img
+            src="./assets/img/icon-graphics-white.svg"
+            alt="أيقونة تصميم الويب"
+          />
+        </div>
+        <div class="block group-hover:hidden">
+          <img
+            src="./assets/img/icon-graphics-black.svg"
+            alt="أيقونة تصميم الويب"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+        >
+          تصميم المواقع
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          تصميم واجهات مستخدم عصرية وجذابة وسهلة الاستخدام.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-16 md:py-20" id="portfolio">
+  <h2
+    class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+  >
+    معرض أعمالي
+  </h2>
+  <h3
+    class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+  >
+    إليكم بعض الأعمال التي أنجزتها
+  </h3>
+
+  <div
+    class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2"
+  >
+    <a
+      href="/"
+      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
+    >
+      <img
+        src="./assets/img/portfolio-apple.jpeg"
+        class="w-full shadow"
+        alt="صورة مشروع"
+      />
+    </a>
+    <a
+      href="/"
+      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
+    >
+      <img
+        src="./assets/img/portfolio-stripe.jpeg"
+        class="w-full shadow"
+        alt="صورة مشروع"
+      />
+    </a>
+    <a
+      href="/"
+      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
+    >
+      <img
+        src="./assets/img/portfolio-fedex.jpeg"
+        class="w-full shadow"
+        alt="صورة مشروع"
+      />
+    </a>
+    <a
+      href="/"
+      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
+    >
+      <img
+        src="./assets/img/portfolio-microsoft.jpeg"
+        class="w-full shadow"
+        alt="صورة مشروع"
+      />
+    </a>
+  </div>
+</div>
+
+<div class="container py-16 md:py-20" id="work">
+  <h2
+    class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+  >
+    خبراتي العملية
+  </h2>
+  <h3
+    class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+  >
+    إليكم أبرز محطاتي المهنية
+  </h3>
+
+  <div class="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
+    <span
+      class="left-2/5 absolute inset-y-0 ml-10 hidden w-0.5 bg-grey-40 md:block"
+    ></span>
+
+    <div class="mt-8 flex flex-col text-center md:flex-row md:text-right">
+      <div class="md:w-2/5">
+        <div class="flex justify-center md:justify-start">
+          <span class="shrink-0">
+            <img
+              src="./assets/img/logo-spotify.svg"
+              class="h-auto w-32"
+              alt="شعار الشركة"
+            />
+          </span>
+          <div class="relative mr-3 hidden w-full md:block">
+            <span
+              class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"
+            ></span>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-3/5">
+        <div class="relative flex md:pr-18">
+          <span
+            class="absolute right-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"
+          ></span>
+
+          <div class="mt-1 flex">
+            <i class="bx bxs-left-arrow hidden text-primary md:block"></i>
+            <div class="md:-mt-1 md:pr-8">
+              <span class="block font-body font-bold text-grey-40"
+                >أبريل 2015 - مارس 2018</span
+              >
+              <span
+                class="block pt-2 font-header text-xl font-bold uppercase text-primary"
+                >مطور واجهات أمامية</span
+              >
+              <div class="pt-2">
+                <span class="block font-body text-black"
+                  >عملت على تطوير واجهات المستخدم وتحسين تجربة المستخدم
+                  باستخدام أحدث التقنيات والأدوات.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 flex flex-col text-center md:flex-row md:text-right">
+      <div class="md:w-2/5">
+        <div class="flex justify-center md:justify-start">
+          <span class="shrink-0">
+            <img
+              src="./assets/img/logo-microsoft.svg"
+              class="h-auto w-32"
+              alt="شعار الشركة"
+            />
+          </span>
+          <div class="relative mr-3 hidden w-full md:block">
+            <span
+              class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"
+            ></span>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-3/5">
+        <div class="relative flex md:pr-18">
+          <span
+            class="absolute right-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"
+          ></span>
+
+          <div class="mt-1 flex">
+            <i class="bx bxs-left-arrow hidden text-primary md:block"></i>
+            <div class="md:-mt-1 md:pr-8">
+              <span class="block font-body font-bold text-grey-40"
+                >مارس 2018 - سبتمبر 2019</span
+              >
+              <span
+                class="block pt-2 font-header text-xl font-bold uppercase text-primary"
+                >مهندس برمجيات</span
+              >
+              <div class="pt-2">
+                <span class="block font-body text-black"
+                  >قمت بتطوير وصيانة أنظمة برمجية متقدمة وتحسين
+                  أداء التطبيقات والخدمات السحابية.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 flex flex-col text-center md:flex-row md:text-right">
+      <div class="md:w-2/5">
+        <div class="flex justify-center md:justify-start">
+          <span class="shrink-0">
+            <img
+              src="./assets/img/logo-fedex.svg"
+              class="h-auto w-32"
+              alt="شعار الشركة"
+            />
+          </span>
+          <div class="relative mr-3 hidden w-full md:block">
+            <span
+              class="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"
+            ></span>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-3/5">
+        <div class="relative flex md:pr-18">
+          <span
+            class="absolute right-8 top-1 hidden h-4 w-4 rounded-full border-2 border-grey-40 bg-white md:block"
+          ></span>
+
+          <div class="mt-1 flex">
+            <i class="bx bxs-left-arrow hidden text-primary md:block"></i>
+            <div class="md:-mt-1 md:pr-8">
+              <span class="block font-body font-bold text-grey-40"
+                >أكتوبر 2019 - فبراير 2021</span
+              >
+              <span
+                class="block pt-2 font-header text-xl font-bold uppercase text-primary"
+                >مهندس DevOps</span
+              >
+              <div class="pt-2">
+                <span class="block font-body text-black"
+                  >إدارة البنية التحتية السحابية وأتمتة عمليات النشر
+                  والتطوير المستمر.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24"
+  style="background-image: url(./assets/img/experience-figure.png)"
+  id="statistics"
+>
+  <div class="container">
+    <div
+      class="mx-auto w-5/6 bg-white py-16 shadow md:w-11/12 lg:py-20 xl:py-24 2xl:w-full"
+    >
+      <div class="grid grid-cols-2 gap-5 md:gap-8 xl:grid-cols-4 xl:gap-5">
+        <div
+          class="flex flex-col items-center justify-center text-center md:flex-row md:text-right"
+        >
+          <div>
+            <img
+              src="./assets/img/icon-project.svg"
+              class="mx-auto h-12 w-auto md:h-20"
+              alt="أيقونة المشاريع"
+            />
+          </div>
+          <div class="pt-5 md:pr-5 md:pt-0">
+            <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
+              12
+            </h1>
+            <h4
+              class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl"
+            >
+              مشروع مكتمل
+            </h4>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col items-center justify-center text-center md:flex-row md:text-right"
+        >
+          <div>
+            <img
+              src="./assets/img/icon-award.svg"
+              class="mx-auto h-12 w-auto md:h-20"
+              alt="أيقونة الجوائز"
+            />
+          </div>
+          <div class="pt-5 md:pr-5 md:pt-0">
+            <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
+              3
+            </h1>
+            <h4
+              class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl"
+            >
+              جوائز حصلت عليها
+            </h4>
+          </div>
+        </div>
+
+        <div
+          class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-right lg:mt-0"
+        >
+          <div>
+            <img
+              src="./assets/img/icon-happy.svg"
+              class="mx-auto h-12 w-auto md:h-20"
+              alt="أيقونة العملاء"
+            />
+          </div>
+          <div class="pt-5 md:pr-5 md:pt-0">
+            <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
+              8
+            </h1>
+            <h4
+              class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl"
+            >
+              عملاء سعداء
+            </h4>
+          </div>
+        </div>
+
+        <div
+          class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-right lg:mt-0"
+        >
+          <div>
+            <img
+              src="./assets/img/icon-puzzle.svg"
+              class="mx-auto h-12 w-auto md:h-20"
+              alt="أيقونة الأخطاء"
+            />
+          </div>
+          <div class="pt-5 md:pr-5 md:pt-0">
+            <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
+              99
+            </h1>
+            <h4
+              class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl"
+            >
+              خطأ تم إصلاحه
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-16 md:py-20" id="contact">
+  <h2
+    class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+  >
+    تواصل معي
+  </h2>
+  <h4
+    class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+  >
+    هل لديك أي أسئلة؟
+  </h4>
+  <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
+    <p class="font-body text-grey-10">
+      يسعدني التواصل معك والإجابة على جميع استفساراتك.
+      لا تتردد في إرسال رسالتك وسأرد عليك في أقرب وقت ممكن.
+    </p>
+  </div>
+  <form class="mx-auto w-full pt-10 sm:w-3/4">
+    <div class="flex flex-col md:flex-row">
+      <input
+        class="ml-3 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:w-1/2 lg:ml-5"
+        placeholder="الاسم"
+        type="text"
+        id="name"
+      />
+      <input
+        class="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-0 md:mr-3 md:w-1/2 lg:mr-5"
+        placeholder="البريد الإلكتروني"
+        type="text"
+        id="email"
+      />
+    </div>
+    <textarea
+      class="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-8"
+      placeholder="الرسالة"
+      id="message"
+      cols="30"
+      rows="10"
+    ></textarea>
+    <button
+      class="mt-6 flex items-center justify-center rounded bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-grey-20"
+    >
+      إرسال
+      <i class="bx bx-chevron-left relative -left-2 text-3xl"></i>
+    </button>
+  </form>
+  <!-- Modern Contact Info Cards -->
+  <style>
+    @keyframes contactFadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes iconPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes borderGlow {
+      0%, 100% { border-color: rgba(85, 64, 174, 0.15); }
+      50% { border-color: rgba(85, 64, 174, 0.4); }
+    }
+    .contact-card {
+      position: relative;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f7ff 100%);
+      border: 1px solid rgba(85, 64, 174, 0.12);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      overflow: hidden;
+      animation: contactFadeUp 0.8s ease-out both;
+    }
+    .contact-card:nth-child(1) { animation-delay: 0.1s; }
+    .contact-card:nth-child(2) { animation-delay: 0.3s; }
+    .contact-card:nth-child(3) { animation-delay: 0.5s; }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #5540af, #7c6dd8, #f9e71c, #7c6dd8, #5540af);
+      background-size: 200% auto;
+      border-radius: 20px 20px 0 0;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .contact-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(85, 64, 174, 0.06) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+    .contact-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px rgba(85, 64, 174, 0.15), 0 8px 20px rgba(85, 64, 174, 0.08);
+      border-color: rgba(85, 64, 174, 0.25);
+    }
+    .contact-card:hover::before {
+      opacity: 1;
+      animation: shimmer 3s linear infinite;
+    }
+    .contact-card:hover::after {
+      opacity: 1;
+    }
+    .contact-icon-wrapper {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #5540af 0%, #7c6dd8 100%);
+      box-shadow: 0 10px 30px rgba(85, 64, 174, 0.3);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+    }
+    .contact-icon-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px dashed rgba(85, 64, 174, 0.2);
+      transition: all 0.6s ease;
+    }
+    .contact-card:hover .contact-icon-wrapper {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 15px 40px rgba(85, 64, 174, 0.4);
+      background: linear-gradient(135deg, #7c6dd8 0%, #5540af 100%);
+    }
+    .contact-card:hover .contact-icon-wrapper::after {
+      transform: rotate(-180deg);
+      border-color: rgba(85, 64, 174, 0.4);
+    }
+    .contact-icon-wrapper i {
+      font-size: 2rem;
+      color: #ffffff;
+      transition: transform 0.4s ease;
+    }
+    .contact-card:hover .contact-icon-wrapper i {
+      animation: iconPulse 1s ease infinite;
+    }
+    .contact-card-title {
+      font-family: 'Cairo', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #929293;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s ease;
+    }
+    .contact-card:hover .contact-card-title {
+      color: #5540af;
+    }
+    .contact-card-value {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #5540af;
+      position: relative;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    .contact-card-value::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #5540af, #f9e71c);
+      transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 2px;
+    }
+    .contact-card:hover .contact-card-value::after {
+      width: 100%;
+    }
+    .contact-card:hover .contact-card-value {
+      color: #3a2a8a;
+    }
+    .contact-divider {
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #5540af, #7c6dd8);
+      border-radius: 3px;
+      margin: 0 auto 1rem;
+      transition: width 0.5s ease;
+    }
+    .contact-card:hover .contact-divider {
+      width: 70px;
+      background: linear-gradient(90deg, #5540af, #f9e71c);
+    }
+  </style>
+  <div class="grid grid-cols-1 gap-6 pt-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+    <!-- Phone Card -->
+    <div class="contact-card">
+      <div class="contact-icon-wrapper">
+        <i class="bx bx-phone"></i>
+      </div>
+      <div class="contact-divider"></div>
+      <p class="contact-card-title">رقم الهاتف</p>
+      <p class="contact-card-value" dir="ltr">(+881) 111 222 333</p>
+    </div>
+    <!-- Email Card -->
+    <div class="contact-card">
+      <div class="contact-icon-wrapper">
+        <i class="bx bx-envelope"></i>
+      </div>
+      <div class="contact-divider"></div>
+      <p class="contact-card-title">البريد الإلكتروني</p>
+      <p class="contact-card-value" dir="ltr">name@mydomain.com</p>
+    </div>
+    <!-- Address Card -->
+    <div class="contact-card sm:col-span-2 lg:col-span-1">
+      <div class="contact-icon-wrapper">
+        <i class="bx bx-map"></i>
+      </div>
+      <div class="contact-divider"></div>
+      <p class="contact-card-title">العنوان</p>
+      <p class="contact-card-value">123 نيويورك، بلوك D 1100، 2011 الولايات المتحدة</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+      <div class="bg-primary">
+  <div class="container flex flex-col justify-between py-6 sm:flex-row">
+    <p class="text-center font-body text-white md:text-right">
+      © جميع الحقوق محفوظة 2022. • ATOM
+    </p>
+    <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
+      <a href="/">
+        <i
+          class="bx bxl-facebook-square text-2xl text-white hover:text-yellow"
+        ></i>
+      </a>
+      <a href="/" class="pr-4">
+        <i class="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
+      </a>
+      <a href="/" class="pr-4">
+        <i class="bx bxl-dribbble text-2xl text-white hover:text-yellow"></i>
+      </a>
+      <a href="/" class="pr-4">
+        <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+      </a>
+      <a href="/" class="pr-4">
+        <i class="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <script src="./assets/js/main.js"></script>
+
+    
+  </body>
+</html>

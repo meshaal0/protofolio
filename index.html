@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+
+  <title>Homepage | Atom Template</title>
+
+  <meta property="og:title" content="Homepage | Atom Template" />
+
+  <meta property="og:locale" content="en_US" />
+
+  <link rel="canonical" href="//" />
+
+  <meta property="og:url" content="//" />
+
+  <meta name="description"
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+
+  <meta name="theme-color" content="#5540af" />
+
+  <meta property="og:site_name" content="Atom Template" />
+
+  <meta property="og:image" content="./assets/img/social.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="twitter:site" content="@tailwindmade" />
+
+  <link crossorigin="crossorigin" href="https://fonts.gstatic.com" rel="preconnect" />
+
+  <link as="style"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="preload" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+
+  <link href="./assets/styles/main.min.css" media="screen" rel="stylesheet" />
+
+  <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
+
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .animate-heartbeat {
+      animation: heartbeat 3s infinite;
+    }
+
+    @keyframes float-icon {
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-8px) rotate(8deg);
+      }
+
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+    }
+
+    .animate-float-icon {
+      animation: float-icon 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+
+<body :class="{ 'overflow-hidden max-h-screen': mobileMenu || lightboxOpen }" class="relative bg-grey-50"
+  x-data="{ mobileMenu: false, lightboxOpen: false, lightboxSrc: '', lightboxType: '' }">
+
+  <div id="main" class="relative">
+    <div x-data="{
+    triggerNavItem(id) {
+        $scroll(id)
+    },
+    triggerMobileNavItem(id) {
+        mobileMenu = false;
+        this.triggerNavItem(id)
+    }
+}">
+      <div class="w-full z-50 top-0 py-3 sm:py-5  absolute
+  ">
+        <div class="container flex items-center justify-between">
+          <div>
+            <a href="/">
+              <img src="./assets/img/386079.svg" class="w-24 lg:w-48" alt="logo image" />
+            </a>
+          </div>
+          <div class="hidden lg:block">
+            <ul class="flex items-center">
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#about')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#services')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#portfolio')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#statistics')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Statistics</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#contact')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+            </ul>
+          </div>
+          <div class="block lg:hidden">
+            <button @click="mobileMenu = true">
+              <i class="bx bx-menu text-4xl text-white"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+        :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
+        <div class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
+          <button class="absolute top-0 right-0 mt-4 mr-4" @click="mobileMenu = false">
+            <img src="./assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
+          </button>
+
+          <ul class="mt-8 flex flex-col">
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#about')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#services')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#portfolio')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
+
+            </li>
+
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#statistics')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Statistics</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#contact')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
+
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+
+      <div>
+        <div class="relative bg-cover bg-center bg-no-repeat py-8"
+          style="background-image: url(./assets/img/bg-hero.jpg)">
+          <div
+            class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat">
+          </div>
+
+          <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
+            <div class="flex flex-col items-center justify-center lg:flex-row">
+              <div class="rounded-full border-8 border-primary shadow-xl">
+                <img src="./assets/img/blog-author.jpg" class="h-48 rounded-full sm:h-56" alt="author" />
+              </div>
+              <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
+                <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
+                  Hello I'm Abdulrahman Khalid !
+                </h1>
+                <div class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
+                  <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
+                    <p class="font-body text-lg uppercase text-white">Let's connect</p>
+                    <div class="hidden sm:block">
+                      <i class="bx bx-chevron-right text-3xl text-yellow"></i>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+                    <a href="https://www.facebook.com/share/179LdHnUbB/">
+                      <i class="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
+                    </a>
+                    <a href="https://t.me/abdokhaled011" class="pl-4">
+                      <i class="bx bxl-telegram text-2xl text-white hover:text-yellow"></i>
+                    </a>
+                    <a href="https://wa.me/201070230275" class="pl-4">
+                      <i class="bx bxl-whatsapp text-2xl text-white hover:text-yellow"></i>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-grey-50" id="about">
+          <div class="container flex flex-col items-center py-16 md:py-20 lg:flex-row">
+            <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
+              <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+                Who am I?
+              </h2>
+              <h4 class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+                I'm Abdulrahman , a Photographer & Videographer
+              </h4>
+              <p class="pt-6 font-body leading-relaxed text-grey-20">
+                My name is Abdelrahman Khaled.
+                I am a student at the Faculty of Specific Education, Minya University.
+                I have skills in Adobe Photoshop, Adobe Illustrator, Adobe InDesign, and 3ds Max.
+                I also have experience in graphic design and creating visual content.
+                Additionally, I have good communication skills and the ability to work within a team.
+              </p>
+              <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
+                <div class="flex items-center justify-center sm:justify-start">
+                  <p class="font-body text-lg font-semibold uppercase text-grey-20">
+                    Connect with me
+                  </p>
+                  <div class="hidden sm:block">
+                    <i class="bx bx-chevron-right text-2xl text-primary"></i>
+                  </div>
+                </div>
+                <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+                  <a href="https://www.facebook.com/share/179LdHnUbB/">
+                    <i class="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"></i>
+                  </a>
+                  <a href="https://t.me/abdokhaled011" class="pl-4">
+                    <i class="bx bxl-telegram text-2xl text-primary hover:text-yellow"></i>
+                  </a>
+                  <a href="https://wa.me/201070230275" class="pl-4">
+                    <i class="bx bxl-whatsapp text-2xl text-primary hover:text-yellow"></i>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+            <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
+              <div>
+                <div class="flex items-end justify-between">
+                  <h4 class="font-body font-semibold uppercase text-black">
+                    Photoshop
+                  </h4>
+                  <h3 class="font-body text-3xl font-bold text-primary">95%</h3>
+                </div>
+                <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                  <div class="h-3 rounded-full bg-primary" style="width: 95%"></div>
+                </div>
+              </div>
+              <div class="pt-6">
+                <div class="flex items-end justify-between">
+                  <h4 class="font-body font-semibold uppercase text-black">Illustrator</h4>
+                  <h3 class="font-body text-3xl font-bold text-primary">80%</h3>
+                </div>
+                <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                  <div class="h-3 rounded-full bg-primary" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="pt-6">
+                <div class="flex items-end justify-between">
+                  <h4 class="font-body font-semibold uppercase text-black">
+                    Indesign
+                  </h4>
+                  <h3 class="font-body text-3xl font-bold text-primary">93%</h3>
+                </div>
+                <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                  <div class="h-3 rounded-full bg-primary" style="width: 93%"></div>
+                </div>
+              </div>
+              <div class="pt-6">
+                <div class="flex items-end justify-between">
+                  <h4 class="font-body font-semibold uppercase text-black">3D Max</h4>
+                  <h3 class="font-body text-3xl font-bold text-primary">75%</h3>
+                </div>
+                <div class="mt-2 h-3 w-full rounded-full bg-lila">
+                  <div class="h-3 rounded-full bg-primary" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container py-16 md:py-20" id="services">
+          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+            Here's what I'm good at
+          </h2>
+          <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+            These are the services Ioffer
+          </h3>
+
+          <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
+
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="hidden group-hover:block">
+                  <img src="./assets/img/icon-email-white.svg" alt="Email Marketing icon" />
+                </div>
+                <div class="block group-hover:hidden">
+                  <img src="./assets/img/icon-email-black.svg" alt="Email Marketing icon" />
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+                  Email Development
+                </h3>
+
+              </div>
+            </div>
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="hidden group-hover:block">
+                  <img src="./assets/img/icon-design-white.svg" alt="Theme Design icon" />
+                </div>
+                <div class="block group-hover:hidden">
+                  <img src="./assets/img/icon-design-black.svg" alt="Theme Design icon" />
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+                  Graphic Design
+                </h3>
+
+              </div>
+            </div>
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="hidden group-hover:block">
+                  <img src="./assets/img/icon-graphics-white.svg" alt="Graphic Design icon" />
+                </div>
+                <div class="block group-hover:hidden">
+                  <img src="./assets/img/icon-graphics-black.svg" alt="Graphic Design icon" />
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+                  Web Design
+                </h3>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container py-16 md:py-20" id="portfolio">
+          <div class="mx-auto w-full text-center mb-16 lg:mb-20">
+            <h2
+              class="font-header text-4xl font-extrabold uppercase tracking-wider text-primary sm:text-5xl lg:text-6xl drop-shadow-sm transition-transform duration-500 hover:scale-105">
+              My Stunning Works
+            </h2>
+            <div class="mt-4 flex items-center justify-center">
+              <span class="block h-1 w-12 rounded-full bg-yellow"></span>
+              <span class="mx-3 block h-1.5 w-24 rounded-full bg-primary shadow-sm"></span>
+              <span class="block h-1 w-12 rounded-full bg-yellow"></span>
+            </div>
+            <h3 class="pt-6 font-header text-xl font-medium text-grey-40 sm:text-2xl lg:text-3xl">
+              A curated collection of my visual and video crafts
+            </h3>
+          </div>
+
+          <div class="mx-auto grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+            <!-- Image -->
+            <div
+              @click="lightboxOpen = true; lightboxSrc = './assets/abdo/IMG-20260228-WA0011.jpg'; lightboxType = 'img'"
+              class="cursor-pointer group relative overflow-hidden rounded-2xl shadow-[0_10px_20px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgb(85,64,175,0.25)] bg-black">
+              <img src="./assets/abdo/IMG-20260228-WA0011.jpg"
+                class="min-h-[18rem] h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                alt="Work artwork" />
+              <div
+                class="absolute inset-0 bg-primary/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-multiply">
+              </div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center h-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-full bg-yellow mb-4 shadow-[0_0_20px_rgb(255,200,0,0.5)] transform transition-transform duration-300 group-hover:scale-110">
+                  <i class="bx bx-zoom-in text-3xl text-primary"></i>
+                </div>
+                <h4 class="font-header text-lg font-bold text-white tracking-widest uppercase">View Image</h4>
+              </div>
+            </div>
+            <!-- Image -->
+            <div
+              @click="lightboxOpen = true; lightboxSrc = './assets/abdo/IMG-20260304-WA0007.jpg'; lightboxType = 'img'"
+              class="cursor-pointer group relative overflow-hidden rounded-2xl shadow-[0_10px_20px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgb(85,64,175,0.25)] bg-black">
+              <img src="./assets/abdo/IMG-20260304-WA0007.jpg"
+                class="min-h-[18rem] h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                alt="Work artwork" />
+              <div
+                class="absolute inset-0 bg-primary/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-multiply">
+              </div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center h-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-full bg-yellow mb-4 shadow-[0_0_20px_rgb(255,200,0,0.5)] transform transition-transform duration-300 group-hover:scale-110">
+                  <i class="bx bx-zoom-in text-3xl text-primary"></i>
+                </div>
+                <h4 class="font-header text-lg font-bold text-white tracking-widest uppercase">View Image</h4>
+              </div>
+            </div>
+            <!-- Video -->
+            <div
+              @click="lightboxOpen = true; lightboxSrc = './assets/abdo/VID-20250218-WA0017.mp4'; lightboxType = 'video'"
+              class="cursor-pointer group relative overflow-hidden rounded-2xl shadow-[0_10px_20px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgb(85,64,175,0.25)] bg-black">
+              <video src="./assets/abdo/VID-20250218-WA0017.mp4"
+                class="min-h-[18rem] h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                muted loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <div
+                class="absolute inset-0 bg-primary/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-multiply">
+              </div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center h-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-full bg-yellow mb-4 shadow-[0_0_20px_rgb(255,200,0,0.5)] transform transition-transform duration-300 group-hover:scale-110">
+                  <i class="bx bx-play text-4xl text-primary pl-1"></i>
+                </div>
+                <h4 class="font-header text-lg font-bold text-white tracking-widest uppercase">Play Video</h4>
+              </div>
+            </div>
+            <!-- Video -->
+            <div
+              @click="lightboxOpen = true; lightboxSrc = './assets/abdo/VID-20250218-WA0018.mp4'; lightboxType = 'video'"
+              class="cursor-pointer group relative overflow-hidden rounded-2xl shadow-[0_10px_20px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgb(85,64,175,0.25)] bg-black">
+              <video src="./assets/abdo/VID-20250218-WA0018.mp4"
+                class="min-h-[18rem] h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                muted loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <div
+                class="absolute inset-0 bg-primary/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-multiply">
+              </div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center h-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-full bg-yellow mb-4 shadow-[0_0_20px_rgb(255,200,0,0.5)] transform transition-transform duration-300 group-hover:scale-110">
+                  <i class="bx bx-play text-4xl text-primary pl-1"></i>
+                </div>
+                <h4 class="font-header text-lg font-bold text-white tracking-widest uppercase">Play Video</h4>
+              </div>
+            </div>
+            <!-- Video -->
+            <div
+              @click="lightboxOpen = true; lightboxSrc = './assets/abdo/VID-20250310-WA0026.mp4'; lightboxType = 'video'"
+              class="cursor-pointer group relative overflow-hidden rounded-2xl shadow-[0_10px_20px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgb(85,64,175,0.25)] bg-black">
+              <video src="./assets/abdo/VID-20250310-WA0026.mp4"
+                class="min-h-[18rem] h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                muted loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <div
+                class="absolute inset-0 bg-primary/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-multiply">
+              </div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center h-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-full bg-yellow mb-4 shadow-[0_0_20px_rgb(255,200,0,0.5)] transform transition-transform duration-300 group-hover:scale-110">
+                  <i class="bx bx-play text-4xl text-primary pl-1"></i>
+                </div>
+                <h4 class="font-header text-lg font-bold text-white tracking-widest uppercase">Play Video</h4>
+              </div>
+            </div>
+            <!-- Video -->
+            <div
+              @click="lightboxOpen = true; lightboxSrc = './assets/abdo/VID-20250310-WA0029.mp4'; lightboxType = 'video'"
+              class="cursor-pointer group relative overflow-hidden rounded-2xl shadow-[0_10px_20px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgb(85,64,175,0.25)] bg-black">
+              <video src="./assets/abdo/VID-20250310-WA0029.mp4"
+                class="min-h-[18rem] h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                muted loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <div
+                class="absolute inset-0 bg-primary/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-multiply">
+              </div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center h-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-full bg-yellow mb-4 shadow-[0_0_20px_rgb(255,200,0,0.5)] transform transition-transform duration-300 group-hover:scale-110">
+                  <i class="bx bx-play text-4xl text-primary pl-1"></i>
+                </div>
+                <h4 class="font-header text-lg font-bold text-white tracking-widest uppercase">Play Video</h4>
+              </div>
+            </div>
+            <!-- Video -->
+            <div
+              @click="lightboxOpen = true; lightboxSrc = './assets/abdo/VID-20250315-WA0011.mp4'; lightboxType = 'video'"
+              class="cursor-pointer group relative overflow-hidden rounded-2xl shadow-[0_10px_20px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgb(85,64,175,0.25)] bg-black">
+              <video src="./assets/abdo/VID-20250315-WA0011.mp4"
+                class="min-h-[18rem] h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                muted loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <div
+                class="absolute inset-0 bg-primary/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-multiply">
+              </div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center h-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-full bg-yellow mb-4 shadow-[0_0_20px_rgb(255,200,0,0.5)] transform transition-transform duration-300 group-hover:scale-110">
+                  <i class="bx bx-play text-4xl text-primary pl-1"></i>
+                </div>
+                <h4 class="font-header text-lg font-bold text-white tracking-widest uppercase">Play Video</h4>
+              </div>
+            </div>
+            <!-- Video -->
+            <div
+              @click="lightboxOpen = true; lightboxSrc = './assets/abdo/VID-20250315-WA0017.mp4'; lightboxType = 'video'"
+              class="cursor-pointer group relative overflow-hidden rounded-2xl shadow-[0_10px_20px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgb(85,64,175,0.25)] bg-black">
+              <video src="./assets/abdo/VID-20250315-WA0017.mp4"
+                class="min-h-[18rem] h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                muted loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <div
+                class="absolute inset-0 bg-primary/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-multiply">
+              </div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center h-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-full bg-yellow mb-4 shadow-[0_0_20px_rgb(255,200,0,0.5)] transform transition-transform duration-300 group-hover:scale-110">
+                  <i class="bx bx-play text-4xl text-primary pl-1"></i>
+                </div>
+                <h4 class="font-header text-lg font-bold text-white tracking-widest uppercase">Play Video</h4>
+              </div>
+            </div>
+            <!-- Video -->
+            <div
+              @click="lightboxOpen = true; lightboxSrc = './assets/abdo/VID-20250321-WA0031.mp4'; lightboxType = 'video'"
+              class="cursor-pointer group relative overflow-hidden rounded-2xl shadow-[0_10px_20px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgb(85,64,175,0.25)] bg-black">
+              <video src="./assets/abdo/VID-20250321-WA0031.mp4"
+                class="min-h-[18rem] h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                muted loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <div
+                class="absolute inset-0 bg-primary/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-multiply">
+              </div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center h-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-full bg-yellow mb-4 shadow-[0_0_20px_rgb(255,200,0,0.5)] transform transition-transform duration-300 group-hover:scale-110">
+                  <i class="bx bx-play text-4xl text-primary pl-1"></i>
+                </div>
+                <h4 class="font-header text-lg font-bold text-white tracking-widest uppercase">Play Video</h4>
+              </div>
+            </div>
+            <!-- Video -->
+            <div
+              @click="lightboxOpen = true; lightboxSrc = './assets/abdo/VID-20250325-WA0017.mp4'; lightboxType = 'video'"
+              class="cursor-pointer group relative overflow-hidden rounded-2xl shadow-[0_10px_20px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgb(85,64,175,0.25)] bg-black">
+              <video src="./assets/abdo/VID-20250325-WA0017.mp4"
+                class="min-h-[18rem] h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                muted loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <div
+                class="absolute inset-0 bg-primary/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-multiply">
+              </div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center h-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-full bg-yellow mb-4 shadow-[0_0_20px_rgb(255,200,0,0.5)] transform transition-transform duration-300 group-hover:scale-110">
+                  <i class="bx bx-play text-4xl text-primary pl-1"></i>
+                </div>
+                <h4 class="font-header text-lg font-bold text-white tracking-widest uppercase">Play Video</h4>
+              </div>
+            </div>
+            <!-- Video -->
+            <div
+              @click="lightboxOpen = true; lightboxSrc = './assets/abdo/VID-20250405-WA0023.mp4'; lightboxType = 'video'"
+              class="cursor-pointer group relative overflow-hidden rounded-2xl shadow-[0_10px_20px_rgb(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgb(85,64,175,0.25)] bg-black">
+              <video src="./assets/abdo/VID-20250405-WA0023.mp4"
+                class="min-h-[18rem] h-72 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                muted loop onmouseover="this.play()" onmouseout="this.pause()"></video>
+              <div
+                class="absolute inset-0 bg-primary/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100 mix-blend-multiply">
+              </div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center h-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 translate-y-8">
+                <div
+                  class="flex h-14 w-14 items-center justify-center rounded-full bg-yellow mb-4 shadow-[0_0_20px_rgb(255,200,0,0.5)] transform transition-transform duration-300 group-hover:scale-110">
+                  <i class="bx bx-play text-4xl text-primary pl-1"></i>
+                </div>
+                <h4 class="font-header text-lg font-bold text-white tracking-widest uppercase">Play Video</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24"
+          style="background-image: url(./assets/img/experience-figure.png)" id="statistics">
+          <div class="container">
+            <div class="mx-auto w-5/6 bg-white py-16 shadow md:w-11/12 lg:py-20 xl:py-24 2xl:w-full">
+              <div class="grid grid-cols-2 gap-5 md:gap-8 xl:grid-cols-4 xl:gap-5">
+                <div class="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
+                  <div>
+                    <img src="./assets/img/icon-project.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon project" />
+                  </div>
+                  <div class="pt-5 md:pl-5 md:pt-0">
+                    <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
+                      12
+                    </h1>
+                    <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
+                      Finished Projects
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
+                  <div>
+                    <img src="./assets/img/icon-award.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon award" />
+                  </div>
+                  <div class="pt-5 md:pl-5 md:pt-0">
+                    <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
+                      3
+                    </h1>
+                    <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
+                      Awards Won
+                    </h4>
+                  </div>
+                </div>
+
+                <div
+                  class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
+                  <div>
+                    <img src="./assets/img/icon-happy.svg" class="mx-auto h-12 w-auto md:h-20"
+                      alt="icon happy clients" />
+                  </div>
+                  <div class="pt-5 md:pl-5 md:pt-0">
+                    <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
+                      8
+                    </h1>
+                    <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
+                      Happy Clients
+                    </h4>
+                  </div>
+                </div>
+
+                <div
+                  class="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
+                  <div>
+                    <img src="./assets/img/icon-puzzle.svg" class="mx-auto h-12 w-auto md:h-20" alt="icon puzzle" />
+                  </div>
+                  <div class="pt-5 md:pl-5 md:pt-0">
+                    <h1 class="font-body text-2xl font-bold text-primary md:text-4xl">
+                      99
+                    </h1>
+                    <h4 class="text-grey-dark font-header text-base font-medium leading-loose md:text-xl">
+                      Bugs Fixed
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container py-16 md:py-20" id="contact">
+          <style>
+            @keyframes float {
+              0% {
+                transform: translateY(0px);
+              }
+
+              50% {
+                transform: translateY(-10px);
+              }
+
+              100% {
+                transform: translateY(0px);
+              }
+            }
+
+            .animate-float {
+              animation: float 4s ease-in-out infinite;
+            }
+
+            .animate-float-delay-1 {
+              animation: float 4s ease-in-out infinite 0.5s;
+            }
+
+            .animate-float-delay-2 {
+              animation: float 4s ease-in-out infinite 1s;
+            }
+          </style>
+
+          <div class="flex flex-col gap-8 pt-8 lg:flex-row lg:gap-10">
+            <!-- Box 1 -->
+            <div
+              class="animate-float group relative w-full overflow-hidden rounded-2xl bg-white p-8 shadow-[0_10px_30px_rgb(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(85,64,175,0.15)] lg:w-1/3">
+              <div
+                class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/5 transition-transform duration-500 group-hover:scale-150">
+              </div>
+              <div class="relative z-10 flex flex-col items-center text-center">
+                <div
+                  class="relative mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 text-primary shadow-sm transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                  <div class="absolute inset-0 rounded-2xl border-2 border-primary/20"></div>
+                  <i class="bx bx-phone text-4xl drop-shadow-sm"></i>
+                </div>
+                <h3
+                  class="mb-3 font-header text-xl font-bold uppercase tracking-widest text-black transition-colors group-hover:text-primary">
+                  My Phone
+                </h3>
+                <p
+                  class="font-body text-lg font-semibold tracking-wide text-grey-40 transition-colors group-hover:text-grey-60">
+                  (+020) 1070230275
+                </p>
+              </div>
+            </div>
+
+            <!-- Box 2 -->
+            <div
+              class="animate-float-delay-1 group relative w-full overflow-hidden rounded-2xl bg-white p-8 shadow-[0_10px_30px_rgb(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(85,64,175,0.15)] lg:w-1/3">
+              <div
+                class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-yellow/10 transition-transform duration-500 group-hover:scale-150">
+              </div>
+              <div class="relative z-10 flex flex-col items-center text-center">
+                <div
+                  class="relative mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow/20 to-yellow/5 text-yellow shadow-sm transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                  <div class="absolute inset-0 rounded-2xl border-2 border-yellow/30"></div>
+                  <i class="bx bx-envelope text-4xl drop-shadow-sm"></i>
+                </div>
+                <h3
+                  class="mb-3 font-header text-xl font-bold uppercase tracking-widest text-black transition-colors group-hover:text-yellow">
+                  My Email
+                </h3>
+                <p
+                  class="font-body text-lg font-semibold tracking-wide text-grey-40 transition-colors group-hover:text-grey-60">
+                  ak7748037@gmail.com
+                </p>
+              </div>
+            </div>
+
+            <!-- Box 3 -->
+            <div
+              class="animate-float-delay-2 group relative w-full overflow-hidden rounded-2xl bg-white p-8 shadow-[0_10px_30px_rgb(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(85,64,175,0.15)] lg:w-1/3">
+              <div
+                class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/5 transition-transform duration-500 group-hover:scale-150">
+              </div>
+              <div class="relative z-10 flex flex-col items-center text-center">
+                <div
+                  class="relative mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 text-primary shadow-sm transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                  <div class="absolute inset-0 rounded-2xl border-2 border-primary/20"></div>
+                  <i class="bx bx-map text-4xl drop-shadow-sm"></i>
+                </div>
+                <h3
+                  class="mb-3 font-header text-xl font-bold uppercase tracking-widest text-black transition-colors group-hover:text-primary">
+                  My Address
+                </h3>
+                <p
+                  class="font-body text-lg font-semibold tracking-wide text-grey-40 transition-colors group-hover:text-grey-60">
+                  Egypt - Minya
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bg-primary">
+        <div class="container flex flex-col justify-between py-6 sm:flex-row">
+          <p class="text-center font-body text-white md:text-left">
+            © Copyright 2026. • Created by <a href="https://github.com/Kh4l3d0" target="_blank">Abdulrahman Khalid</a>
+          </p>
+          <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
+            <a href="/">
+              <i class="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i class="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i class="bx bxl-dribbble text-2xl text-white hover:text-yellow"></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i class="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Lightbox -->
+    <div x-show="lightboxOpen" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 px-4"
+      x-transition.opacity.duration.500ms style="display: none;">
+      <button @click="lightboxOpen = false; lightboxSrc = '';"
+        class="absolute top-6 right-6 text-white hover:text-yellow focus:outline-none z-[110]">
+        <i class="bx bx-x text-5xl"></i>
+      </button>
+
+      <div class="relative w-full max-w-6xl max-h-[90vh] flex items-center justify-center">
+        <template x-if="lightboxType === 'img'">
+          <img :src="lightboxSrc"
+            class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl transition-transform duration-300 transform scale-100"
+            @click.away="lightboxOpen = false" />
+        </template>
+
+        <template x-if="lightboxType === 'video'">
+          <video :src="lightboxSrc"
+            class="max-w-full max-h-[90vh] rounded-lg shadow-2xl transition-transform duration-300 transform scale-100"
+            controls autoplay @click.away="lightboxOpen = false"></video>
+        </template>
+      </div>
+    </div>
+    <script src="./assets/js/main.js"></script>
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. Add AOS attributes to general layout
+        document.querySelectorAll('h1:not(#portfolio h1), h2:not(#portfolio h2), h3:not(#portfolio h3)').forEach(el => {
+          if (!el.hasAttribute('data-aos')) el.setAttribute('data-aos', 'fade-up');
+        });
+
+        // 2. Profile picture breathing and floating
+        const profilePicBox = document.querySelector('.rounded-full.border-8');
+        if (profilePicBox) {
+          profilePicBox.classList.add('animate-heartbeat', 'hover:scale-110', 'transition-transform', 'duration-500', 'cursor-pointer');
+          profilePicBox.setAttribute('data-aos', 'zoom-in');
+          profilePicBox.setAttribute('data-aos-duration', '1500');
+        }
+
+        // 3. Social Media icons hover physics
+        document.querySelectorAll('.bxl-facebook-square, .bxl-telegram, .bxl-whatsapp, .bxl-linkedin, .bxl-instagram, .bxl-twitter, .bxl-dribbble').forEach((icon, index) => {
+          icon.classList.add('transition-transform', 'duration-300', 'hover:-translate-y-2', 'hover:scale-125');
+          // Add staggered fade up
+          let parentLink = icon.parentElement;
+          if (parentLink && parentLink.tagName === 'A') {
+            parentLink.setAttribute('data-aos', 'fade-up');
+            parentLink.setAttribute('data-aos-delay', (index * 100).toString());
+          }
+        });
+
+        // 4. Progress Bars Animation (Intersection Observer)
+        document.querySelectorAll('.mt-2.h-3.w-full.rounded-full.bg-lila > div').forEach((el, index) => {
+          el.style.transition = "width 5s ease-out";
+          let originalWidth = el.style.width;
+          let targetPercent = parseInt(originalWidth) || 0;
+          el.style.width = "0%";
+
+          let textContainer = el.closest('.mt-2').previousElementSibling;
+          let textElement = textContainer ? textContainer.querySelector('h3') : null;
+          if (textElement) textElement.textContent = "0%";
+
+          let observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+              setTimeout(() => {
+                el.style.width = originalWidth;
+
+                if (textElement) {
+                  let duration = 5000;
+                  let startTime = null;
+
+                  function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    let progress = (timestamp - startTime) / duration;
+
+                    let easeProgress = 1 - Math.pow(1 - progress, 3);
+
+                    if (progress < 1) {
+                      textElement.textContent = Math.floor(easeProgress * targetPercent) + "%";
+                      window.requestAnimationFrame(step);
+                    } else {
+                      textElement.textContent = targetPercent + "%";
+                    }
+                  }
+                  window.requestAnimationFrame(step);
+                }
+              }, index * 200 + 300); // Stagger progress bar filling
+              observer.disconnect();
+            }
+          }, { threshold: 0.5 });
+          observer.observe(el);
+
+          let parentContainer = el.closest('.pt-6') || el.closest('div');
+          if (parentContainer && !parentContainer.hasAttribute('data-aos')) {
+            parentContainer.setAttribute('data-aos', 'fade-right');
+            parentContainer.setAttribute('data-aos-delay', (index * 150).toString());
+          }
+        });
+
+        // 5. Services Cards Staggered Animation & Hover 3D
+        document.querySelectorAll('#services .group').forEach((el, index) => {
+          el.setAttribute('data-aos', 'fade-up');
+          el.setAttribute('data-aos-delay', (index * 150).toString());
+          el.classList.add('transition-all', 'duration-500', 'hover:-translate-y-4');
+
+          let icon = el.querySelector('img');
+          if (icon) {
+            icon.classList.add('transition-transform', 'duration-500', 'group-hover:scale-125', 'group-hover:rotate-12');
+          }
+        });
+
+        // 6. Statistics Icons floating
+        document.querySelectorAll('#statistics img').forEach((icon, index) => {
+          icon.classList.add('animate-float-icon');
+          let parent = icon.closest('div.flex-col');
+          if (parent) {
+            parent.setAttribute('data-aos', 'zoom-in-up');
+            parent.setAttribute('data-aos-delay', (index * 150).toString());
+          }
+        });
+
+        // Init AOS
+        AOS.init({
+          offset: 80,
+          duration: 1000,
+          easing: 'ease-out-cubic',
+          once: true
+        });
+      });
+    </script>
+
+</body>
+
+</html>
